@@ -21,9 +21,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			BorderPane root = new BorderPane();
 			WebView webview = new WebView();
-			root.setCenter(webview);
+			BorderPane root = new BorderPane(webview);
 			
 			// change the id of the video here!
 			String id = getParameters().getRaw().get(0);

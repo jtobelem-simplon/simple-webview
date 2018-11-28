@@ -1,4 +1,4 @@
-# Simply launch a wev viedo
+# Simply launch a web viedo on youtube
 
 You can test it executing main method of Main.java.
 
