@@ -10,32 +10,32 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 
-public class Main extends Application implements Runnable {
+public class Webviewer extends Application implements Runnable {
 
 	private final static String URL="http://www.youtube.com/embed/{0}?autoplay=1";
 
 
 	public static String NERY_ID = "uQITWbAaDx0";
 	public static String THOVEX_ID = "yKP7jQknGjs";
+	
 
 	private static WebView webview;
+	
+	private static Stage primaryStage;
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage0) {
 		try {
 			webview = new WebView();
+			primaryStage = primaryStage0;
+			
 			BorderPane root = new BorderPane(webview);
-
-			// change the id of the video here!
-//			String id = getParameters().getRaw().get(0);
-			String id = THOVEX_ID;
-
-			webview.getEngine().load(MessageFormat.format(URL, id));
 
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
+			Platform.setImplicitExit(true);
+			
 
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -52,7 +52,23 @@ public class Main extends Application implements Runnable {
 		launch();
 	}
 	
+	public static void pause() {
+		Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+            	primaryStage.hide();
+            }
+        });
+	}
+	
+	
 	public static void setID(String id) {
+		Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+            	primaryStage.show();
+            }
+        });
 		Platform.runLater(new Runnable(){
             @Override
             public void run(){

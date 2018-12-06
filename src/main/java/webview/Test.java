@@ -6,13 +6,22 @@ public class Test {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		new Thread(new Main()).start(); // this will call your Main 
+		new Thread(new Webviewer()).start();
+		// this will call your Main 
 		
 		Scanner saisie = new Scanner(System.in);
 		System.out.println("will now play an other video (after enter key)");
 		saisie.nextLine();
+		Webviewer.setID(Webviewer.THOVEX_ID);
 		
-		Main.setID(Main.NERY_ID);
+		System.out.println("will now play an other video (after enter key)");
+		saisie.nextLine();
+		Webviewer.setID(Webviewer.NERY_ID);
+		
+		System.out.println("will pause (after enter key)");
+		saisie.nextLine();
+		Webviewer.pause();
+		
 		
 		saisie.close();
         
