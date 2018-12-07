@@ -12,18 +12,10 @@ public class Test {
 		Scanner saisie = new Scanner(System.in);
 		System.out.println("will now play an other video (after enter key)");
 		saisie.nextLine();
+	
+		
 		Webviewer.setID(Webviewer.THOVEX_ID);
 		
-		System.out.println("will now play an other video (after enter key)");
-		saisie.nextLine();
-		Webviewer.setID(Webviewer.NERY_ID);
-		
-		System.out.println("will pause (after enter key)");
-		saisie.nextLine();
-		Webviewer.pause();
-		
-		
-		saisie.close();
         
         
     }
